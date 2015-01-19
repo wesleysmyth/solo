@@ -1,0 +1,19 @@
+<div class="container signup">
+
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  <section class="questions" ng-if="chosen">
+    <div class="banddiv">
+      <h1><a href="#/signup/band" ng-click="goBand()">Are you a band?</a></h1>
+    </div>
+    <div class="venuediv">
+     <h1><a href="#/signup/venue" ng-click="goVenue()">Or are you a venue?</a></h1>
+    </div>
+  </section>
+
+  <div ui-view></div>
+
+  <div class="footer">
+    <p>Brought to you by <a href="https://twitter.com/wesleytate">@wesleytate</a></p>
+  </div>
+
+</div>

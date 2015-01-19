@@ -1,0 +1,38 @@
+<div class="signup" id="bandSignup">
+  <h2>Band Signup</h2>
+  <form class="bandForm" name="signupForm" ng-submit="signup()">
+    Username
+    <input type="text" ng-model="user.username">
+    Band/Artist Name
+    <input type="text" ng-model="user.bandname">
+    Email Address
+    <input type="email" ng-model="user.email">
+    City
+    <input type="text" ng-model="user.city">
+    Genre(s)
+    <br>
+    Rock
+    <input class="genre" id="Rock" type="checkbox">
+    Rap
+    <input class="genre" id="Rap" type="checkbox">
+    Punk
+    <input class="genre" id="Punk" type="checkbox">
+    Folk
+    <input class="genre" id="Folk" type="checkbox">
+    <br>
+    R&B
+    <input class="genre" id="R&B" type="checkbox">
+    Experimental
+    <input class="genre" id="Experimental" type="checkbox">
+    Classical
+    <input class="genre" id="Classical" type="checkbox">
+    <br>
+    Other
+    <input class="genre other" id="Other" type="text">
+    <br>
+    Password
+    <input type="password">
+    <button>signup</button>
+  </form>
+  <a href="#/signin" class="signin">Already have an account? <strong>Signin</strong> ...</a>
+</div>
