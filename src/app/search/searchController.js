@@ -33,7 +33,7 @@ angular.module('mvp.search', [])
 
   $scope.venues = [
   {
-    picture: 'assets/images/mhow.jpg',
+    picture: 'assets/images/mhow2.jpg',
     bio: 'We are an awesome music venue in Williamsburg, Brooklyn',
     name: 'Music Hall of Williamsburg',
     city: 'Brooklyn',
@@ -47,11 +47,11 @@ angular.module('mvp.search', [])
     capacity: 3000
   },
   {
-    picture: 'assets/images/sigur.jpg',
-    bio: 'We\'re from Iceland!  Oh yeah!  I have an amazing voice, you can listen to us and it will be outstanding I guarantee it.  Also i love to play a guitar with a violin bow',
-    name: 'Sigur Ros',
-    city: 'Reykjavik',
-    genres: ['Experimental, ', 'Rock, ', 'Ambient']
+    picture: 'assets/images/echo.jpeg',
+    bio: 'The home of all the best shows and stuff in Los Angeles',
+    name: 'Echoplex',
+    city: 'Los Angeles',
+    capacity: 1500
   }
   ];
 

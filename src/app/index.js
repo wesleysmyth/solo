@@ -8,7 +8,8 @@ angular.module('mvp', [
   'ngAnimate', 
   'ngFx',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.calendar'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
