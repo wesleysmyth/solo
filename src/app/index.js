@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('mtest2', [
+angular.module('mvp', [
+  'mvp.main',
+  'mvp.user',
+  'mvp.nav',
   'ngAnimate', 
+  'ngFx',
   'ui.router',
   'ui.bootstrap'
 ])
@@ -27,6 +31,21 @@ angular.module('mtest2', [
       templateUrl: 'app/users/venuesignup.html',
       controller: 'UserController'
     })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'app/users/login.html',
+      controller: 'UserController'
+    })
+    .state('login.band', {
+      url: '/band',
+      templateUrl: 'app/users/bandlogin.html',
+      controller: 'UserController'
+    })
+    .state('login.venue', {
+      url: '/venue',
+      templateUrl: 'app/users/venuelogin.html',
+      controller: 'UserController'
+    })
     .state('test', {
       url: '/test',
       templateUrl: 'app/main/main.html',
@@ -38,22 +57,6 @@ angular.module('mtest2', [
     });
 
   $urlRouterProvider.otherwise('/');
-})
-.run(function ($rootScope, $state) {
-  $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-    // console.log('toState: ', toState)
-    // console.log('fromState: ', fromState)
-    if ((toState.url === '/band' || toState.url === '/venue') && fromState.url !== '/signup'){
-      console.log('right');
-    }
-    // if (toState.needsAuthentication && !Auth.isAuth()) { 
-    //   event.preventDefault();
-    //   // console.log($state);
-    //   // $location.path('/signin');
-    //   // $state.go('signin');
-    //   $state.go('signin');
-    // }
-  });
 });
 
 

@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('mtest2')
+angular.module('mvp.main', [])
   .controller('MainCtrl', function ($scope) {
+    $scope.chosen = true;
     $scope.awesomeThings = [
       {
         'title': 'AngularJS',

@@ -75,7 +75,7 @@ gulp.task('partials', ['consolidate'], function () {
       quotes: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'mtest2'
+      module: 'mvp'
     }))
     .pipe(gulp.dest('.tmp/inject/'));
 });
