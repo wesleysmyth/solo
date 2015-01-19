@@ -2,6 +2,7 @@
 
 angular.module('mvp', [
   'mvp.main',
+  'mvp.search',
   'mvp.user',
   'mvp.nav',
   'ngAnimate', 
@@ -45,6 +46,22 @@ angular.module('mvp', [
       url: '/venue',
       templateUrl: 'app/users/venuelogin.html',
       controller: 'UserController'
+    })
+    .state('search', {
+      url: '/search',
+      abstract: true,
+      templateUrl: 'app/search/search.html',
+      controller: 'SearchController'
+    })
+    .state('search.bands', {
+      url: '/bands',
+      templateUrl: 'app/bands/bandsearch.html',
+      controller: 'SearchController'
+    })
+    .state('search.venues', {
+      url: '/venues',
+      templateUrl: 'app/venues/venuesearch.html',
+      controller: 'SearchController'
     })
     .state('test', {
       url: '/test',

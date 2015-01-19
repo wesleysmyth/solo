@@ -6,5 +6,5 @@ angular.module('mvp.nav', [])
 
   $scope.resetSignup = function () {
     console.log('reset');
-  }
+  };
 }]);
