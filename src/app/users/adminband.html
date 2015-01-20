@@ -1,0 +1,61 @@
+<section class="adminpanel">
+  <h1>
+    Welcome, {{bands[0].name}}!
+  </h1>
+  <h2 >
+    <a href="" ng-click="goInbox()" ng-if="inbox">Inbox</a>
+    <a href="" ng-click="goInbox()" ng-if="!inbox">Back to Calendar</a>
+  </h2>
+  <section >
+  <h1 ng-if="inbox">
+    Calendar
+  </h1>
+  <div ng-init="toggleDays()" class="cal fx-fade-down fx-speed-500" ng-show="inbox"></div>
+  <div ng-init="toggleDays()" class="fx-fade-up fx-speed-600" ng-if="!inbox">
+    <div ng-repeat="message in messages" class="message">
+      <h4>{{message.title}}</h4>
+      <h6>Sent: {{message.sentAt}}</h6>
+      <p>{{message.text}}</p>
+      <button ng-click="respond()">Write back</button>
+    </div>
+  </div>
+</section>
+<div ui-view></div>
+
+<script>
+  $(document).ready(function() {
+    // page is now ready, initialize the calendar...
+    $('.cal').fullCalendar({
+        // put your options and callbacks here
+        dayClick: function(date, jsEvent, view) {
+          // alert('Clicked on: ' + date.format());
+          // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+          // alert('Current view: ' + view.name);
+          // change the day's background color just for fun
+          // $(this).css('background-color', 'red');
+          this.count = this.count ? this.count : 0;
+          console.log(this.count);
+          if (this.count % 2 === 0) {
+            $(this).css('background-color', 'green');
+            $(this).css('text-align', 'center');
+            var text = 'Available';
+            $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+          } 
+          // else if (this.count % 2 === 0) {
+          //   $(this).css('background-color', 'indianred');
+          //   $(this).css('text-align', 'center');
+          //   var text = 'Not Available';
+          //   $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+          // } 
+          else {
+            $(this).css('background-color', '#fafafa');
+            $(this).css('text-align', 'center');
+            var text = '';
+            $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+          }
+          $(this.count++);
+
+      }
+    });
+  });
+</script>

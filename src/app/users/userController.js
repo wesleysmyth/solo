@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mvp.user', [])
-.controller('UserController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+.controller('UserController', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
 
   $scope.chosen = true;
   $scope.goBand = function() {
@@ -11,6 +11,20 @@ angular.module('mvp.user', [])
   $scope.goVenue = function() {
     $scope.chosen = false;
   };
+
+  // var splitName = $stateParams.bandname.split(/(?=[A-Z])/);
+  console.log($stateParams);
+
+  $scope.bandname = $stateParams.bandname;
+  console.log($stateParams.bandname);
+  var ans = $stateParams.bandname
+  // console.log(ans.split(/(?=[A-Z])/));
+  var that = $scope;
+  setTimeout(function() {
+    that.bandname = ans.split(/(?=[A-Z])/).join(' ');
+    console.log(that);
+  }, 1000);
+  $scope.itemId = $stateParams.itemId;
 
 }])
 .run(function ($rootScope, $state) {

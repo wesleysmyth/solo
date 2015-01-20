@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<div ng-repeat="venue in venues | filter : searchText">
+<div class="searchresults" ng-repeat="venue in venues | filter : searchText">
   <a href="{{'#/venues/' + venue.name.split(' ').join('')}}"><h3>{{venue.name}}</h3></a>
   <a href="{{'#/venues/' + venue.name.split(' ').join('')}}"><img src="{{venue.picture}}"></a>
   <h4>Bio</h4>

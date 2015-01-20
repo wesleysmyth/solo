@@ -11,6 +11,8 @@ require('./config/middleware.js')(app, express);
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
 
+console.log('fdji');
+
 
 /* Walkthrough of the server
 

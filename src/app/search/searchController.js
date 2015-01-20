@@ -1,11 +1,39 @@
 'use strict';
 
 angular.module('mvp.search', [])
-.controller('SearchController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+.controller('SearchController', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
 
-  $scope.searchBands = function() {
+  $scope.inbox = true;
 
+  $scope.goInbox = function() {
+    $scope.inbox = !$scope.inbox;
+  };  
+
+  $scope.respond = function() {
+    $state.go('admin.band.message');
   };
+
+  $scope.reset = function() {
+    $state.go('admin.band');
+  };
+
+  $scope.messages = [
+    {
+      title: 'Hey BOH, just reaching out...',
+      text: 'Was hoping you were available on January 27th for a gig.  Get back to me when you get a chance!\n Thanks, \n Bruno - Music Hall Of Williamsburg',
+      sentAt: moment().format('MMMM Do YYYY, h:mm:ss a')
+    },
+    {
+      title: 'Come play at the Echoplex!',
+      text: 'Shoreditch Kickstarter freegan, fingerstache blog tote bag whatever semiotics DIY lo-fi. Shabby chic locavore jean shorts, paleo fingerstache actually Kickstarter occupy chia slow-carb. Schlitz jean shorts ennui cornhole, ugh fap twee whatever shabby chic Williamsburg Wes Anderson umami selfies. Brunch ennui church-key, Blue Bottle artisan four dollar toast typewriter hoodie. Wolf squid locavore, next level kitsch tote bag kale chips 3 wolf moon +1 small batch. Narwhal Banksy Shoreditch, migas cred pork belly butcher. Selfies art party Banksy, Odd Future Brooklyn vinyl Thundercats mlkshk.',
+      sentAt: moment().format('MMMM Do YYYY, h:mm:ss a')
+    },
+    {
+      title: 'Sup dudes',
+      text: 'Pug wolf bespoke, roof party retro artisan biodiesel tousled keffiyeh chambray occupy Neutra drinking vinegar. Beard Schlitz biodiesel meditation Blue Bottle. Single-origin coffee tilde semiotics fashion axe. Banksy cold-pressed scenester swag. Aesthetic vegan Williamsburg, occupy hashtag Brooklyn 90\'s bicycle rights pug chillwave Echo Park. 3 wolf moon dreamcatcher Schlitz twee kitsch wayfarers PBR. Deep v raw denim pork belly squid.',
+      sentAt: moment().format('MMMM Do YYYY, h:mm:ss a')
+    }
+  ];
 
   $scope.bands = [
   {

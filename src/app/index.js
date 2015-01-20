@@ -112,7 +112,36 @@ angular.module('mvp', [
       templateUrl: 'app/venues/echoplex.html',
       controller: 'BandController'
     })
-    // .state('bands.band', {
+    .state('admin', {
+      url: '/admin',
+      abstract: true,
+      templateUrl: 'app/users/admin.html',
+      controller: 'SearchController'
+    })
+    .state('admin.band', {
+      url: '/:bandname',
+      templateUrl: 'app/users/adminband.html',
+      controller: 'SearchController'
+    })
+    .state('admin.venue', {
+      url: '/venue',
+      abstract: true,
+      templateUrl: 'app/users/adminvenue.html',
+      controller: 'SearchController'
+    })
+    .state('admin.band.message', {
+      url: '/message',
+      templateUrl: 'app/users/bandmessage.html',
+      controller: 'SearchController'
+    });
+
+  $urlRouterProvider.otherwise('/');
+});
+
+
+
+
+// .state('bands.band', {
     //   url: '/:bandname',
     //   controller: function($stateParams) {
     //     $stateParams.bandname;
@@ -123,17 +152,6 @@ angular.module('mvp', [
     //     }]
     //   }
     // })
-    .state('about', {
-      url: '/about',
-      controller: 'MainCtrl'
-    });
-
-  $urlRouterProvider.otherwise('/');
-});
-
-
-
-
 
 
 
