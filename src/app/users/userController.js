@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('mvp.user', [])
-.controller('UserController', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
+.controller('UserController', ['$scope', '$rootScope', '$state', '$window', 'Auth', function ($scope, $rootScope, $state, $window, Auth) {
+
+  $scope.user = {};
 
   $scope.chosen = true;
   $scope.goBand = function() {
@@ -12,19 +14,32 @@ angular.module('mvp.user', [])
     $scope.chosen = false;
   };
 
-  // var splitName = $stateParams.bandname.split(/(?=[A-Z])/);
-  console.log($stateParams);
+  $scope.signup = function () {
+    console.log('signing up');
+    Auth.signupBand($scope.user)
+      .then(function (token) {
+        console.log('made it to the promise land');
+        $window.localStorage.setItem('com.mvp', token);
+        $state.go('admin.band');
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
 
-  $scope.bandname = $stateParams.bandname;
-  console.log($stateParams.bandname);
-  var ans = $stateParams.bandname
-  // console.log(ans.split(/(?=[A-Z])/));
-  var that = $scope;
-  setTimeout(function() {
-    that.bandname = ans.split(/(?=[A-Z])/).join(' ');
-    console.log(that);
-  }, 1000);
-  $scope.itemId = $stateParams.itemId;
+  // var splitName = $stateParams.bandname.split(/(?=[A-Z])/);
+  // console.log($stateParams);
+
+  // $scope.bandname = $stateParams.bandname;
+  // console.log($stateParams.bandname);
+  // var ans = $stateParams.bandname
+  // // console.log(ans.split(/(?=[A-Z])/));
+  // var that = $scope;
+  // setTimeout(function() {
+  //   that.bandname = ans.split(/(?=[A-Z])/).join(' ');
+  //   console.log(that);
+  // }, 1000);
+  // $scope.itemId = $stateParams.itemId;
 
 }])
 .run(function ($rootScope, $state) {

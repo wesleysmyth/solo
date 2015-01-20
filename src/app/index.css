@@ -1,0 +1,190 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.thumbnail {
+  height: 200px;
+}
+.thumbnail img.pull-right {
+  width: 50px;
+}
+html,
+.view {
+  background-color: #cd5c5c;
+}
+.body {
+  background-color: #000;
+  margin-top: -20px;
+}
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  background-color: #fafafa;
+}
+.bodyText {
+  background-color: #fafafa;
+  margin-top: 0px;
+  padding: 20px;
+  font-family: courier;
+}
+.bodyText h3 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.headerimg {
+  width: 100%;
+  opacity: 0.6;
+  margin-top: -120px;
+}
+.bodyTitle {
+  margin-bottom: 0px;
+  color: #fafafa;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  top: 250px;
+  width: 100%;
+  font-size: 5em;
+}
+.subtitleText {
+  color: #fafafa;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 1.4em;
+  top: 340px;
+  font-weight: 100;
+}
+.titleLink {
+  color: #fafafa;
+}
+.signup {
+  background-color: #fafafa;
+}
+.signup input {
+  display: block;
+  margin-bottom: 10px;
+  width: 20em;
+}
+.signup .genre {
+  display: inline-block;
+  width: 30px;
+}
+.signup .other {
+  width: 10em;
+}
+.signup .signin {
+  margin-bottom: 50px;
+}
+.signup .bandForm {
+  padding-bottom: 20px;
+}
+.signup .footer {
+  position: absolute;
+  bottom: 0;
+}
+.signup .gap {
+  margin-bottom: -10px;
+  color: #fafafa;
+}
+.banddiv,
+.venuediv {
+  padding: 100px;
+  text-align: center;
+}
+.banddiv a,
+.venuediv a {
+  text-decoration: none;
+}
+.banddiv {
+  margin-top: -20px;
+  background-color: #fff;
+}
+.banddiv a {
+  color: #000;
+}
+.venuediv {
+  background-color: #000;
+}
+.venuediv a {
+  color: #fff;
+}
+#bandSignup,
+#venueSignup {
+  padding-left: 50px;
+}
+#bandSignup .bottomDiv,
+#venueSignup .bottomDiv {
+  padding-bottom: 50px;
+}
+.login .block {
+  display: block;
+  width: 50%;
+  min-height: 400px;
+}
+.login .block:nth-child(1) {
+  float: left;
+}
+.login .block:nth-child(2) {
+  float: right;
+  margin-top: -20px;
+}
+.searchresults {
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+.venuebody {
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+.bandbody {
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+.searchBody {
+  background-color: #090909;
+  margin-top: -20px;
+  height: 300px;
+}
+.searchBody input {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+.searchBody #searchInputDiv {
+  padding-top: 80px;
+}
+.searchBody #searchInputDiv h2 {
+  text-align: center;
+  color: #808080;
+}
+.searchBody #searchInputDiv button {
+  margin: 0 auto;
+  display: block;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+.cal {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.adminpanel {
+  background-color: #fafafa;
+  margin-top: -20px;
+  padding: 40px;
+}
+.adminpanel .cal {
+  margin-top: 0px;
+}
+.message {
+  border: 1px solid #000;
+  padding: 5px;
+}
+.bandmessage {
+  width: 50%;
+  height: 200px;
+}

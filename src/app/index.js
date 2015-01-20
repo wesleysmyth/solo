@@ -6,6 +6,7 @@ angular.module('mvp', [
   'mvp.nav',
   'mvp.calendar',
   'mvp.band',
+  'mvp.services',
   'ngAnimate', 
   'ngFx',
   'ui.router',

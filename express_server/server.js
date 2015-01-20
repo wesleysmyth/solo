@@ -1,17 +1,18 @@
   var express     = require('express'),
       mongoose    = require('mongoose');
 
+
 var app = express();
 
 mongoose.connect('mongodb://localhost/mvp'); // connect to mongo database named mvp
 
 // configure our server with all the middleware and and routing
-require('./config/middleware.js')(app, express);
+require('middleware.js')(app, express);
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
 
-console.log('fdji');
+console.log('restarting');
 
 
 /* Walkthrough of the server
