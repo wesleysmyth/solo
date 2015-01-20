@@ -1,6 +1,6 @@
 <section class="adminpanel">
   <h1>
-    Welcome, {{venueName}}!
+    <span class="venuename" id="{{venueName}}">Welcome, {{venueName}}!</span>
   </h1>
   <h2 >
     <a href="" ng-click="goInbox()" ng-if="inbox" class="inbox">Inbox</a>
@@ -27,37 +27,86 @@
   $(document).ready(function() {
     // page is now ready, initialize the calendar...
     $('.cal').fullCalendar({
-        // put your options and callbacks here
-        dayClick: function(date, jsEvent, view) {
-          // alert('Clicked on: ' + date.format());
-          // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          // alert('Current view: ' + view.name);
-          // change the day's background color just for fun
-          // $(this).css('background-color', 'red');
-          this.count = this.count ? this.count : 0;
-          console.log(this.count);
-          if (this.count % 2 === 0) {
-            $(this).css('background-color', 'green');
-            $(this).css('text-align', 'center');
-            var text = 'Available';
-            $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
-          } 
-          // else if (this.count % 2 === 0) {
-          //   $(this).css('background-color', 'indianred');
-          //   $(this).css('text-align', 'center');
-          //   var text = 'Not Available';
-          //   $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
-          // } 
-          else {
-            $(this).css('background-color', '#fafafa');
-            $(this).css('text-align', 'center');
-            var text = '';
-            $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+      // put your options and callbacks here
+      dayClick: function(date, jsEvent, view) {
+        // alert('Clicked on: ' + date.format());
+        // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        // alert('Current view: ' + view.name);
+        // change the day's background color just for fun
+        // $(this).css('background-color', 'red');
+        
+        this.count = this.count ? this.count : 0;
+        if (this.count % 2 === 0) {
+          $(this).css('background-color', '#75E69E');
+          $(this).css('text-align', 'center');
+          var text = 'Available';
+          $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+          var badPractice = function() {
+            var $body = angular.element(document.body);   // 1
+            var $rootScope = $body.scope().$root;         // 2
+            $rootScope.$apply(function () {
+              var venuename = document.getElementsByClassName('venuename')[0].id; 
+              $rootScope[venuename].days.push(date.getDate());
+              console.log('venuename obj ', $rootScope[venuename]);
+            });
+          };
+
+          badPractice();
+        } 
+        // else if (this.count % 2 === 0) {
+        //   $(this).css('background-color', 'indianred');
+        //   $(this).css('text-align', 'center');
+        //   var text = 'Not Available';
+        //   $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+        // } 
+        else {
+          $(this).css('background-color', '#fafafa');
+          $(this).css('text-align', 'center');
+          var text = '';
+          $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+          var badPractice2 = function() {
+            var $body = angular.element(document.body);   // 1
+            var $rootScope = $body.scope().$root;         // 2
+            $rootScope.$apply(function () {
+              var venuename = document.getElementsByClassName('venuename')[0].id; 
+              $rootScope[venuename].days.splice($rootScope[venuename].days.indexOf(date.getDate()),1);
+              console.log('venuename obj ', $rootScope[venuename]);
+            });
+          };
+
+          badPractice2();
+        }
+        $(this.count++);
+      },
+      dayRender: function(date, cell) {
+        setTimeout(function(){ 
+          var today = new Date();
+          if (date.getDate() === today.getDate()) {
+            cell.css("background-color", "lightyellow");
           }
-          $(this.count++);
+          // console.log(cell);
+          var badPractice = function() {
+            var $body = angular.element(document.body);   // 1
+            var $rootScope = $body.scope().$root;         // 2
+            $rootScope.$apply(function () {
+              var venuename = document.getElementsByClassName('venuename')[0].id; 
+              var days = $rootScope[venuename];
+              // console.log(venuename);
+              // console.log('venuename obj ', $rootScope[venuename]);
 
-          
 
+              for(var i = 0; i < days.length; i++) {
+                console.log(getDate(days[i]));
+                $(this).css('background-color', '#75E69E');
+                $(this).css('text-align', 'center');
+                var text = 'Available';
+                $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+              }
+            });
+          };
+
+          badPractice();
+        }, 1000);
       }
     });
   });

@@ -138,6 +138,11 @@ angular.module('mvp', [
       url: '/message',
       templateUrl: 'app/users/venuemessage.html',
       controller: 'SearchController'
+    })
+    .state('messageLand', {
+      url: '/messageLand',
+      templateUrl: 'app/users/messageLand.html',
+      controller: 'SearchController'
     });
 
   $urlRouterProvider.otherwise('/');

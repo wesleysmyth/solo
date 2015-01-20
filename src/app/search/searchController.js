@@ -23,8 +23,8 @@ angular.module('mvp.search', [])
     $state.go('admin.band');
   };
 
-  $scope.sendUsAMessage = function() {
-    $state.go('messageland');
+  $scope.messageLand = function() {
+    $state.go('messageLand');
   };
 
   $scope.messages = [

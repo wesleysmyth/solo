@@ -4,7 +4,7 @@
     <input type="text" ng-model="user.username">
     <h3>Password</h3>
     <input type="password" ng-model="user.password">
-    <button ui-sref="admin.band({user: username})">Login</button>
+    <button ui-sref="admin.band({bandname: user.bandname})">Login</button>
   </form>
   <div class="bottomDiv">
     <a href="#/signup" class="signin">Need to Signup First?<strong>Signup</strong> ...</a>

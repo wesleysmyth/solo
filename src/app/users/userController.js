@@ -10,11 +10,14 @@ angular.module('mvp.user', [])
     $scope.chosen = false;
   };
 
+  $scope.bandin = false;
+  $scope.venuein = false;
+
   $scope.goVenue = function() {
     $scope.chosen = false;
   };
 
-  $scope.signup = function () {
+  $scope.bandsignup = function () {
     // console.dir($scope.user);
     // console.log('signing up');
     // Auth.signupBand($scope.user)
@@ -28,7 +31,36 @@ angular.module('mvp.user', [])
     //   });
     console.log('signing up!');
 
-    var newUser = $scope.user.bandname || $scope.user.venuename;
+    $scope.bandin = true;
+
+    var newUser = $scope.user.bandname;
+    $rootScope[newUser] = {newUser: newUser};
+    $rootScope[newUser].days = [];
+    console.log($rootScope[newUser]);
+
+    bandsRef.push($scope.user);
+    // var state = 'admin.' + $scope.user.bandname;
+    // console.log(state);
+    // $state.go('admin.band');
+  };
+
+  $scope.venuesignup = function () {
+    // console.dir($scope.user);
+    // console.log('signing up');
+    // Auth.signupBand($scope.user)
+    //   .then(function (token) {
+    //     console.log('made it to the promise land');
+    //     $window.localStorage.setItem('com.mvp', token);
+    //     $state.go('admin.band');
+    //   })
+    //   .catch(function (error) {
+    //     console.error(error);
+    //   });
+    console.log('signing up!');
+
+    $scope.venuein = true;
+
+    var newUser = $scope.user.venuename;
     $rootScope[newUser] = {newUser: newUser};
     $rootScope[newUser].days = [];
     console.log($rootScope[newUser]);
