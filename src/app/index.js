@@ -5,6 +5,8 @@ angular.module('mvp', [
   'mvp.search',
   'mvp.user',
   'mvp.nav',
+  'mvp.calendar',
+  'mvp.band',
   'ngAnimate', 
   'ngFx',
   'ui.router',
@@ -69,12 +71,34 @@ angular.module('mvp', [
       templateUrl: 'app/main/main.html',
       controller: 'MainCtrl'
     })
+    .state('bands', {
+      url: '/bands',
+      abstract: true,
+      templateUrl: 'app/bands/bandProfile.html',
+      controller: 'BandController'
+    })
+    .state('bands.BandOfHorses', {
+      url: '/BandOfHorses',
+      controller: 'BandController',
+      templateUrl: 'app/bands/bandofhorses.html'
+    })
+    // .state('bands.band', {
+    //   url: '/:bandname',
+    //   controller: function($stateParams) {
+    //     $stateParams.bandname;
+    //   },
+    //   resolve: {
+    //     bandname: ['$stateParams', function($stateParams){
+    //         return $stateParams.bandname;
+    //     }]
+    //   }
+    // })
     .state('about', {
       url: '/about',
       controller: 'MainCtrl'
     });
 
-  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/');
 });
 
 

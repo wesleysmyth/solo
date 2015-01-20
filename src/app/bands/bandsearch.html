@@ -9,8 +9,8 @@
 </section>
 
 <div ng-repeat="band in bands">
-  <h3>{{band.name}}</h3>
-  <img src="{{band.picture}}">
+  <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><h3>{{band.name}}</h3></a>
+  <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><img src="{{band.picture}}"></a>
   <h4>Bio</h4>
   <p>
   {{band.bio}}
