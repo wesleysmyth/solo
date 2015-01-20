@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('mvp', [
   'mvp.main',
   'mvp.search',
@@ -82,17 +81,48 @@ angular.module('mvp', [
       templateUrl: 'app/bands/bandofhorses.html',
       controller: 'BandController'
     })
-    .state('bands.band', {
-      url: '/:bandname',
-      controller: function($stateParams) {
-        $stateParams.bandname;
-      },
-      resolve: {
-        bandname: ['$stateParams', function($stateParams){
-            return $stateParams.bandname;
-        }]
-      }
+    .state('bands.TheBand', {
+      url: '/TheBand',
+      templateUrl: 'app/bands/theband.html',
+      controller: 'BandController'
     })
+    .state('bands.SigurRos', {
+      url: '/SigurRos',
+      templateUrl: 'app/bands/sigurros.html',
+      controller: 'BandController'
+    })
+    .state('venues', {
+      url: '/venues',
+      abstract: true,
+      templateUrl: 'app/venues/venueprofile.html',
+      controller: 'BandController'
+    })
+    .state('venues.MusicHallOfWillamsburg', {
+      url: '/MusicHallOfWilliamsburg',
+      templateUrl: 'app/venues/mhow.html',
+      controller: 'BandController'
+    })
+    .state('venues.FillmoreEast', {
+      url: '/FillmoreEast',
+      templateUrl: 'app/venues/fillmoreeast.html',
+      controller: 'BandController'
+    })
+    .state('venues.Echoplex', {
+      url: '/Echoplex',
+      templateUrl: 'app/venues/echoplex.html',
+      controller: 'BandController'
+    })
+    // .state('bands.band', {
+    //   url: '/:bandname',
+    //   controller: function($stateParams) {
+    //     $stateParams.bandname;
+    //   },
+    //   resolve: {
+    //     bandname: ['$stateParams', function($stateParams){
+    //         return $stateParams.bandname;
+    //     }]
+    //   }
+    // })
     .state('about', {
       url: '/about',
       controller: 'MainCtrl'

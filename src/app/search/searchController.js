@@ -35,7 +35,7 @@ angular.module('mvp.search', [])
   {
     picture: 'assets/images/mhow2.jpg',
     bio: 'We are an awesome music venue in Williamsburg, Brooklyn',
-    name: 'Music Hall of Williamsburg',
+    name: 'Music Hall Of Williamsburg',
     city: 'Brooklyn',
     capacity: 1000
   },

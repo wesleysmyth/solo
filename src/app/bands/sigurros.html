@@ -1,0 +1,13 @@
+<div ng-repeat="band in bands | filter: {name: 'Sigur Ros'} : true">
+  <h3>{{band.name}}</h3>
+  <img src="{{band.picture}}">
+  <h4>Bio</h4>
+  <p>
+  {{band.bio}}
+  </p>
+  <h4>City</h4>
+  {{band.city}}
+  <h4>Genres</h4>
+  <span ng-repeat="genre in band.genres">{{genre}}</span>
+
+</div>
