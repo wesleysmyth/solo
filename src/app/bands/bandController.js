@@ -29,6 +29,7 @@ angular.module('mvp.band', [])
       }
     };
 
+    
 
 
     $scope.bands = [
