@@ -79,26 +79,26 @@ angular.module('mvp', [
     })
     .state('bands.BandOfHorses', {
       url: '/BandOfHorses',
-      controller: 'BandController',
-      templateUrl: 'app/bands/bandofhorses.html'
+      templateUrl: 'app/bands/bandofhorses.html',
+      controller: 'BandController'
     })
-    // .state('bands.band', {
-    //   url: '/:bandname',
-    //   controller: function($stateParams) {
-    //     $stateParams.bandname;
-    //   },
-    //   resolve: {
-    //     bandname: ['$stateParams', function($stateParams){
-    //         return $stateParams.bandname;
-    //     }]
-    //   }
-    // })
+    .state('bands.band', {
+      url: '/:bandname',
+      controller: function($stateParams) {
+        $stateParams.bandname;
+      },
+      resolve: {
+        bandname: ['$stateParams', function($stateParams){
+            return $stateParams.bandname;
+        }]
+      }
+    })
     .state('about', {
       url: '/about',
       controller: 'MainCtrl'
     });
 
-  // $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 });
 
 

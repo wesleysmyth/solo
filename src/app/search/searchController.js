@@ -11,7 +11,7 @@ angular.module('mvp.search', [])
   {
     picture: 'assets/images/BOH.jpg',
     bio: 'We are an amazing band of people who sing about things.  All of the things.  There are horses and such and more and more and more and more and stuff as well as other things.',
-    name: 'Band of Horses',
+    name: 'Band Of Horses',
     city: 'San Francisco',
     genres: ['Folk, ', 'Rock, ', 'Indie']
   },

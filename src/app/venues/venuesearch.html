@@ -1,14 +1,14 @@
 <section class="searchBody">
   <div id="searchInputDiv">
     <h2>Find a Venue</h2>
-    <form onsubmit="searchVenue()">
-      <input class="searchInline" type="search" ng.model="searchvenue">
+    <form>
+      <input class="searchInline" type="search" ng-model="searchText">
       <button>Search</button>
     </form>
   </div>
 </section>
 
-<div ng-repeat="venue in venues">
+<div ng-repeat="venue in venues | filter : searchText">
   <h3>{{venue.name}}</h3>
   <img src="{{venue.picture}}">
   <h4>Bio</h4>

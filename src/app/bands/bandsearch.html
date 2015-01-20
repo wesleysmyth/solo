@@ -2,14 +2,14 @@
   <section class="searchBody">
     <div id="searchInputDiv">
       <h2>Find a Band</h2>
-      <form onsubmit="searchBands()">
+      <form>
         <input class="searchInline" type="search" ng-model="searchText">
         <button>Search</button>
       </form>
     </div>
   </section>
 
-  <div ng-repeat="band in bands | filter : searchText ">
+  <div ng-repeat="band in bands | filter : searchText">
     <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><h3>{{band.name}}</h3></a>
     <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><img src="{{band.picture}}"></a>
     <h4>Bio</h4>

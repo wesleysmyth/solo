@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" ng-controller="SearchController">
   <div ng-include="'components/navbar/navbar.html'"></div>
   <div ui-view></div>
-
-  <!-- <div class="cal" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div> -->
+  <button ng-click="">Send us a message</button>
+  <div ng-init="toggleDays()" class="cal"></div>
   <!-- <div class="btn-toolbar">
     <div class="btn-group">
         <button class="btn btn-success" ng-click="changeView('agendaDay', myCalendar)">Day</button>
@@ -25,8 +25,36 @@
         </div>
     </li>
 </ul> -->
-
-<div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
-
-
+<!-- <div ui-calendar="uiConfig" class="span8 calendar" ng-model="eventSources"></div> -->
+<!-- <div ui-calendar="calendarOptions" ng-model="eventSources" calendar="myCalendar"> -->
 </div>
+<script>
+      $(document).ready(function() {
+        // page is now ready, initialize the calendar...
+        console.log('loaded');
+        $('.cal').fullCalendar({
+            // put your options and callbacks here
+            dayClick: function(date, jsEvent, view) {
+              // alert('Clicked on: ' + date.format());
+              // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+              // alert('Current view: ' + view.name);
+              // change the day's background color just for fun
+              // $(this).css('background-color', 'red');
+              this.count = this.count ? this.count : 0;
+              if (this.count % 2 === 0) {
+                $(this).css('background-color', 'green');
+                $(this).css('text-align', 'center');
+                var text = 'Available';
+                $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+              } else {
+                $(this).css('background-color', 'indianred');
+                $(this).css('text-align', 'center');
+                var text = '';
+                $(this)[0].childNodes[0].childNodes[1].childNodes[0].innerText = text;
+              }
+              $(this.count++);
+
+          }
+        });
+      });
+    </script>
