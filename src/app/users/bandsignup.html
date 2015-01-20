@@ -32,9 +32,10 @@
     <br>
     Password
     <input type="password" ng-model="user.password">
-    <button>signup</button>
+    <button ui-sref="admin.band({bandname: user.bandname})" ng-click="signup()">signup</button>
   </form>
   <div class="bottomDiv">
     <a href="#/signin" class="signin">Already have an account? <strong>Signin</strong> ...</a>
   </div>
+  <!-- <button ng-click="">Admin</button> -->
 </div>

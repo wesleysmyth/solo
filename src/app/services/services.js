@@ -35,28 +35,28 @@ angular.module('mvp.services', [])
   };
 
   var signupBand = function (band) {
-    // return $http({
-    //   method: 'POST',
-    //   url: '/signup/band',
-    //   data: band
-    // })
-    // .then(function (resp) {
-    //   console.log('got response in signupBand in services.js');
-    //   return resp.data.token;
-    // });
-    $http.post('/signup/band', band).
-    success(function(data, status, headers, config) {
-      // this callback will be called asynchronously
-      // when the response is available
-      console.log('data', data);
-      console.log('config', config);
-      console.log('status', status);
-      console.log('headers', headers);
-    }).
-    error(function(data, status, headers, config) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
+    return $http({
+      method: 'POST',
+      url: '/signup/band',
+      data: band
+    })
+    .then(function (resp) {
+      console.log('got response in signupBand in services.js');
+      return resp.data.token;
     });
+    // $http.post('/signup/band', band).
+    // success(function(data, status, headers, config) {
+    //   // this callback will be called asynchronously
+    //   // when the response is available
+    //   console.log('data', data);
+    //   console.log('config', config);
+    //   console.log('status', status);
+    //   console.log('headers', headers);
+    // }).
+    // error(function(data, status, headers, config) {
+    //   // called asynchronously if an error occurs
+    //   // or server returns response with an error status.
+    // });
 
   };
 

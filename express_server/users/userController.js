@@ -57,7 +57,7 @@ module.exports = {
 
   signupBand: function (req, res, next) {
     console.log('made it to usercontroller in server');
-    console.log('req.data ', req.data);
+    console.log('req ', req);
     var username  = req.body.username,
         password  = req.body.password,
         create,

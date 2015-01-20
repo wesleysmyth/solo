@@ -1,0 +1,13 @@
+<div class="login" id="bandLogin">
+  <form class="bandForm" name="signupForm" ng-submit="login()">
+    <h3>Username</h3>
+    <input type="text" ng-model="user.username">
+    <h3>Password</h3>
+    <input type="password" ng-model="user.password">
+    <button ui-sref="admin.band({user: username})">Login</button>
+  </form>
+  <div class="bottomDiv">
+    <a href="#/signup" class="signin">Need to Signup First?<strong>Signup</strong> ...</a>
+  </div>
+  <!-- <button ng-click="">Admin</button> -->
+</div>  

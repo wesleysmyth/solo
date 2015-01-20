@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mvp.user', [])
-.controller('UserController', ['$scope', '$rootScope', '$state', '$window', 'Auth', function ($scope, $rootScope, $state, $window, Auth) {
+.controller('UserController', ['$scope', '$rootScope', '$state', '$stateParams', '$window', 'Auth', function ($scope, $rootScope, $state, $stateParams, $window, Auth) {
 
   $scope.user = {};
 
@@ -15,16 +15,48 @@ angular.module('mvp.user', [])
   };
 
   $scope.signup = function () {
-    console.log('signing up');
-    Auth.signupBand($scope.user)
-      .then(function (token) {
-        console.log('made it to the promise land');
-        $window.localStorage.setItem('com.mvp', token);
-        $state.go('admin.band');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    // console.dir($scope.user);
+    // console.log('signing up');
+    // Auth.signupBand($scope.user)
+    //   .then(function (token) {
+    //     console.log('made it to the promise land');
+    //     $window.localStorage.setItem('com.mvp', token);
+    //     $state.go('admin.band');
+    //   })
+    //   .catch(function (error) {
+    //     console.error(error);
+    //   });
+    console.log('signing up!');
+
+    var newUser = $scope.user.bandname || $scope.user.venuename;
+    $rootScope[newUser] = {newUser: newUser};
+    $rootScope[newUser].days = [];
+    console.log($rootScope[newUser]);
+
+    bandsRef.push($scope.user);
+    // var state = 'admin.' + $scope.user.bandname;
+    // console.log(state);
+    // $state.go('admin.band');
+  };
+
+  $scope.login = function (user) {
+    // console.dir($scope.user);
+    // console.log('signing up');
+    // Auth.signupBand($scope.user)
+    //   .then(function (token) {
+    //     console.log('made it to the promise land');
+    //     $window.localStorage.setItem('com.mvp', token);
+    //     $state.go('admin.band');
+    //   })
+    //   .catch(function (error) {
+    //     console.error(error);
+    //   });
+    console.log('login clicked');
+
+    var result = bandsRef.orderByKey();
+
+    console.log(result);
+    
   };
 
   // var splitName = $stateParams.bandname.split(/(?=[A-Z])/);

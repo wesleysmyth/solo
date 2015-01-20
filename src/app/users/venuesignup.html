@@ -4,7 +4,7 @@
     Username
     <input type="text" ng-model="user.username">
     Venue Name
-    <input type="text" ng-model="user.bandname">
+    <input type="text" ng-model="user.venuename">
     Email Address
     <input type="email" ng-model="user.email">
     City
@@ -16,7 +16,7 @@
     <span class="gap">Text</span><br>
     Password
     <input type="password">
-    <button>signup</button>
+    <button ui-sref="admin.venue({venuename: user.venuename})">signup</button>
   </form>
   <div class="bottomDiv">
     <a href="#/signin" class="signin">Already have an account? <strong>Signin</strong> ...</a>

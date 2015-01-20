@@ -124,15 +124,19 @@ angular.module('mvp', [
       templateUrl: 'app/users/adminband.html',
       controller: 'SearchController'
     })
-    .state('admin.venue', {
-      url: '/venue',
-      abstract: true,
-      templateUrl: 'app/users/adminvenue.html',
-      controller: 'SearchController'
-    })
     .state('admin.band.message', {
       url: '/message',
       templateUrl: 'app/users/bandmessage.html',
+      controller: 'SearchController'
+    })
+    .state('admin.venue', {
+      url: '/:venuename',
+      templateUrl: 'app/users/adminvenue.html',
+      controller: 'SearchController'
+    })
+    .state('admin.venue.message', {
+      url: '/message',
+      templateUrl: 'app/users/venuemessage.html',
       controller: 'SearchController'
     });
 

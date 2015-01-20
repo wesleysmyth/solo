@@ -27,11 +27,9 @@ var connect = function (app, express) {
 
 
   // app.use('/signup/*', userRouter); // use user router for all user request
-  app.post('/signup/band', function(req, res){
-    console.log(req);
-    res.writeHead(200);
-    res.end('gfds');
-    // userController.signupBand(req, res);
+  app.post('/signup/band', function(data) {
+    console.log(data);
+    userController.signupBand();
   });
   // app.use('/login/*', userRouter);
 

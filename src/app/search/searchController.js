@@ -1,25 +1,35 @@
 'use strict';
 
 angular.module('mvp.search', [])
-.controller('SearchController', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
+.controller('SearchController', ['$scope', '$rootScope', '$state', '$stateParams', function ($scope, $rootScope, $state, $stateParams) {
 
   $scope.inbox = true;
+  $scope.message = false;
 
   $scope.goInbox = function() {
     $scope.inbox = !$scope.inbox;
   };  
 
   $scope.respond = function() {
+    console.log('respond clicked');
+    $scope.message = !$scope.message;
     $state.go('admin.band.message');
   };
+
+  $scope.bandName = $stateParams.bandname;
+  $scope.venueName = $stateParams.venuename;
 
   $scope.reset = function() {
     $state.go('admin.band');
   };
 
+  $scope.sendUsAMessage = function() {
+    $state.go('messageland');
+  };
+
   $scope.messages = [
     {
-      title: 'Hey BOH, just reaching out...',
+      title: 'Hey, just reaching out...',
       text: 'Was hoping you were available on January 27th for a gig.  Get back to me when you get a chance!\n Thanks, \n Bruno - Music Hall Of Williamsburg',
       sentAt: moment().format('MMMM Do YYYY, h:mm:ss a')
     },
