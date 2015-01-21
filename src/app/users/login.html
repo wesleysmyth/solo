@@ -2,18 +2,14 @@
 
   <div ng-include="'components/navbar/navbar.html'"></div>
   <section class="questions fx-fade-left-big fx-speed-400" ng-if="chosen">
-    <div class="banddiv block">
-      <h1><a href="#/login/band" class="fx-fade-left fx-speed-600" ng-click="goBand()">Are you logging in as a band?</a></h1>
+    <div class="venuediv" style="margin-top: -20px">
+      <h1><a href="#/login/band" ng-click="goBand()">Are you logging in as a band?</a></h1>
     </div>
-    <div class="venuediv block">
-     <h1><a href="#/login/venue" class="fx-fade-left-big fx-speed-600" ng-click="goVenue()">Or are you logging in as a venue?</a></h1>
+    <div class="banddiv">
+     <h1><a href="#/login/venue" ng-click="goVenue()">Or are you logging in as a venue?</a></h1>
     </div>
   </section>
 
   <div ui-view></div>
-
-  <div class="footer">
-    <p>Brought to you by <a href="https://twitter.com/wesleytate">@wesleytate</a></p>
-  </div>
 
 </div>

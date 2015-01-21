@@ -10,16 +10,20 @@
   <h1 ng-if="inbox">
     Calendar
   </h1>
+  <p class="caltext">
+    Here you can set your available dates so bands will be able to contact you on the days you are free.  Just click on the date to make it available on your profile.
+  </p>
   <div ng-init="toggleDays()" class="cal fx-fade-down fx-speed-500" ng-show="inbox"></div>
+  <!-- <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>  -->
   <div ng-init="toggleDays()" class="fx-fade-up fx-speed-600" ng-if="!inbox">
     <div ng-repeat="message in messages" class="message">
       <h4>{{message.title}}</h4>
       <h6>Sent: {{message.sentAt}}</h6>
       <p>{{message.text}}</p>
-      <button ng-click="respond()">Write back</button>
+      <button ng-click="messageLand()">Write back</button>
     </div>
-    <div ui-view ng-if="!inbox"></div>
   </div>
+  <div ui-view></div>
 </section>
 
 
@@ -109,6 +113,7 @@
         }, 1000);
       }
     });
+    
   });
 </script>
 

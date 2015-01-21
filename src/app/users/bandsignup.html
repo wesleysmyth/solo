@@ -2,40 +2,40 @@
   <h2>Band Signup</h2>
   <form class="bandForm" name="signupForm" ng-submit="bandsignup()">
     Username
-    <input type="text" ng-model="user.username">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.username">
     Band/Artist Name
-    <input type="text" ng-model="user.bandname">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.bandname">
     Email Address
-    <input type="email" ng-model="user.email">
+    <input class="fx-fade-normal fx-speed-700" type="email" ng-model="user.email">
     City
-    <input type="text" ng-model="user.city">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.city">
     Genre(s)
     <br>
     Rock
-    <input class="genre" id="Rock" type="checkbox" ng-model="user.rock">
+    <input class="genre fx-fade-normal fx-speed-700" id="Rock" type="checkbox" ng-model="user.rock">
     Rap
-    <input class="genre" id="Rap" type="checkbox" ng-model="user.rap">
+    <input class="genre fx-fade-normal fx-speed-700" id="Rap" type="checkbox" ng-model="user.rap">
     Punk
-    <input class="genre" id="Punk" type="checkbox" ng-model="user.punk">
+    <input class="genre fx-fade-normal fx-speed-700" id="Punk" type="checkbox" ng-model="user.punk">
     Folk
-    <input class="genre" id="Folk" type="checkbox" ng-model="user.folk">
+    <input class="genre fx-fade-normal fx-speed-700" id="Folk" type="checkbox" ng-model="user.folk">
     <br>
     R&B
-    <input class="genre" id="R&B" type="checkbox" ng-model="user.rnb">
+    <input class="genre fx-fade-normal fx-speed-700" id="R&B" type="checkbox" ng-model="user.rnb">
     Experimental
-    <input class="genre" id="Experimental" type="checkbox" ng-model="user.experimental">
+    <input class="genre fx-fade-normal fx-speed-700" id="Experimental" type="checkbox" ng-model="user.experimental">
     Classical
-    <input class="genre" id="Classical" type="checkbox" ng-model="user.classical">
+    <input class="genre fx-fade-normal fx-speed-700" id="Classical" type="checkbox" ng-model="user.classical">
     <br>
     Other
-    <input class="genre other" id="Other" type="text" ng-model="user.other">
+    <input class="genre other fx-fade-normal fx-speed-700" id="Other" type="text" ng-model="user.other">
     <br>
     Password
-    <input type="password" ng-model="user.password">
+    <input class="fx-fade-normal fx-speed-700" type="password" ng-model="user.password">
     <button ui-sref="admin.band({bandname: user.bandname})" ng-click="bandsignup()">signup</button>
   </form>
   <div class="bottomDiv">
-    <a href="#/signin" class="signin">Already have an account? <strong>Signin</strong> ...</a>
+    <a href="#/login" class="signin">Already have an account? <strong>Signin</strong> ...</a>
   </div>
   <!-- <button ng-click="">Admin</button> -->
 </div>

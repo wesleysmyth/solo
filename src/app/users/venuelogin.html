@@ -1,10 +1,11 @@
 <div class="login" id="venueLogin">
-  <form class="venueForm" name="signupForm" ng-submit="login()">
+  <h2>Venue Login</h2>
+  <form class="venueForm" name="signupForm" ng-submit="venuelogin()">
     <h3>Username</h3>
-    <input type="text" ng-model="user.username">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.username">
     <h3>Password</h3>
-    <input type="password" ng-model="user.password">
-    <button ui-sref="admin.venue({venuename: user.venuename})">Login</button>
+    <input class="fx-fade-normal fx-speed-700" type="password" ng-model="user.password">
+    <button ui-sref="admin.venue({venuename: user.username})">Login</button>
   </form>
   <div class="bottomDiv">
     <a href="#/signup" class="signin">Need to Signup First?<strong>Signup</strong> ...</a>

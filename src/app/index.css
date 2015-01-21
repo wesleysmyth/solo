@@ -171,6 +171,7 @@ html,
 .cal {
   margin-top: 50px;
   margin-bottom: 50px;
+  padding: 20px;
 }
 .adminpanel {
   background-color: #fafafa;
@@ -197,3 +198,25 @@ html,
 .sendusamessage {
   margin-left: 20px;
 }
+.messageland {
+  padding: 20px;
+}
+.messageland button {
+  width: 20%;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+.login h2 {
+  padding-left: 20px;
+}
+.footer {
+  padding-left: 20px;
+}
+.caltext {
+  width: 46%;
+}
+
+input.ng-dirty.ng-valid { border:1px solid Green; border-radius: 2px; }
+input.ng-dirty.ng-invalid { border:1px solid Red; border-radius: 2px;}
+input.ng-dirty.ng-valid ~ span.ok { color:green; display:inline; }
+input.ng-dirty.ng-invalid ~ span.ko { color:red; display:inline; }

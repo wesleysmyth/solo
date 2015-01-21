@@ -9,7 +9,7 @@
     </div>
   </section>
 
-  <div class="searchresults" ng-repeat="band in bands | filter : searchText">
+  <div class="searchresults fx-fade-up-big" ng-repeat="band in bands | filter : searchText">
     <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><h3>{{band.name}}</h3></a>
     <a href="{{'#/bands/' + band.name.split(' ').join('')}}"><img src="{{band.picture}}"></a>
     <h4>Bio</h4>

@@ -1,0 +1,6 @@
+<div ng-repeat="message in messages" class="message">
+  <h4>{{message.title}}</h4>
+  <h6>Sent: {{message.sentAt}}</h6>
+  <p>{{message.text}}</p>
+  <button ng-click="messageLand()">Write back</button>
+</div>

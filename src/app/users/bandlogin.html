@@ -1,10 +1,11 @@
 <div class="login" id="bandLogin">
-  <form class="bandForm" name="signupForm" ng-submit="login()">
+  <h2>Band Login</h2>
+  <form class="bandForm" name="signupForm" ng-submit="bandlogin()">
     <h3>Username</h3>
-    <input type="text" ng-model="user.username">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.username">
     <h3>Password</h3>
-    <input type="password" ng-model="user.password">
-    <button ui-sref="admin.band({bandname: user.bandname})">Login</button>
+    <input class="fx-fade-normal fx-speed-700" type="password" ng-model="user.password">
+    <button ui-sref="admin.band({bandname: user.username})">Login</button>
   </form>
   <div class="bottomDiv">
     <a href="#/signup" class="signin">Need to Signup First?<strong>Signup</strong> ...</a>

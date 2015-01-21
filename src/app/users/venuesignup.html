@@ -2,23 +2,21 @@
   <h2>Venue Signup</h2>
   <form class="bandForm" name="signupForm" ng-submit="venuesignup()">
     Username
-    <input type="text" ng-model="user.username">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.username">
     Venue Name
-    <input type="text" ng-model="user.venuename">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.venuename">
     Email Address
-    <input type="email" ng-model="user.email">
+    <input class="fx-fade-normal fx-speed-700" type="email" ng-model="user.email">
     City
-    <input type="text" ng-model="user.city">
+    <input class="fx-fade-normal fx-speed-700" type="text" ng-model="user.city">
     Capacity
-    <input type="number">
+    <input class="fx-fade-normal fx-speed-700" type="number">
     <br>
-    <br>
-    <span class="gap">Text</span><br>
     Password
-    <input type="password">
+    <input class="fx-fade-normal fx-speed-700" type="password">
     <button ui-sref="admin.venue({venuename: user.venuename})">signup</button>
   </form>
   <div class="bottomDiv">
-    <a href="#/signin" class="signin">Already have an account? <strong>Signin</strong> ...</a>
+    <a href="#/login" class="signin">Already have an account? <strong>Signin</strong> ...</a>
   </div>
 </div>

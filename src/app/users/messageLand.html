@@ -1,6 +1,15 @@
-<div class="container search" ng-controller="SearchController">
+<!-- <div class="container search" ng-controller="SearchController"> -->
+<div class="container">
 
   <div ng-include="'components/navbar/navbar.html'"></div>
+  <form class="messageland" class="fx-fade-down fx-speed-500">
+    <h4>Title</h4>
+    <input type="text" name="title" ng-model="messagelandtitle">
+    <h4>Message</h4>
+    <textarea rows="6" cols="50" name="message" class="bandmessage" ng-model="messagelandtext"></textarea>
+    <br>
+    <button ng-click="messagelandsend()">Send</button>
+  </form>
   
 
 </div>
